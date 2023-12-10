@@ -3,14 +3,60 @@
 <head>
   <title>Subreddit Extractor</title>
   <style>
+    .hello {
+      background-color: aliceblue;
+      padding: 10px;
+      border: 1px solid rgba(20, 20, 20, 0.5);
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      line-height: 20px;
+    }
+    .hello:hover {
+      background-color: azure;
+      padding: 10px;
+      border: 1px solid rgba(128, 128, 128, 1);
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      line-height: 20px;
+    }
     body {
       width: 200px;
       padding: 10px;
+    }
+
+    .icon {
+      font-size: 20px;
+      cursor: pointer;
+    }
+    
+    #extractButton {
+      padding: 10px;
+    }
+
+    .thumbs-up.clicked {
+      background-color: lightgreen;
+    }
+
+    .thumbs-down.clicked {
+      background-color: lightcoral;
+    }
+
+    .thumbs-button {
+      border-radius: 100px;
+      padding: 8px;
+      border: 0px;
     }
   </style>
   <script src="popup.js"></script>
 </head>
 <body>
-  <button id="extractButton">Predict the amount of hate speech on this subreddit</button>
+  <button id="extractButton" class="hello">Predict the amount of hate speech on this subreddit</button>
+  <div>
+    <p>Do you find the prediction correct?</p>
+    <button id="up-button" class="thumbs-button thumbs-up">
+      <span class="icon">&#128077;</span>
+    </button>
+    <button id="down-button" class="thumbs-button thumbs-down">
+      <span class="icon">&#128078;</span>
+    </button>
+  </div>
 </body>
 </html>
